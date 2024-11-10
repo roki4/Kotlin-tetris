@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#000000">
+
+    <!-- Счетчик очков -->
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Score: 0"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:padding="8dp" />
+
+    <!-- Игровое поле -->
+    <FrameLayout
+        android:id="@+id/gameBoard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="100dp"
+        android:background="#333333" />
+
+    <!-- Кнопки управления -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <!-- Влево -->
+        <Button
+            android:id="@+id/moveLeftButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="◀"
+            android:backgroundTint="#555555"
+            android:textColor="#FFFFFF" />
+
+        <!-- Вниз -->
+        <Button
+            android:id="@+id/moveDownButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="▼"
+            android:backgroundTint="#555555"
+            android:textColor="#FFFFFF" />
+
+        <!-- Вправо -->
+        <Button
+            android:id="@+id/moveRightButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="▶"
+            android:backgroundTint="#555555"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Кнопка поворота -->
+    <Button
+        android:id="@+id/rotateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/moveDownButton"
+        android:layout_centerHorizontal="true"
+        android:text="⟳"
+        android:backgroundTint="#555555"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Кнопка паузы -->
+    <Button
+        android:id="@+id/pauseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="Pause"
+        android:backgroundTint="#FF5722"
+        android:textColor="#FFFFFF"
+        android:padding="8dp" />
+</RelativeLayout>
