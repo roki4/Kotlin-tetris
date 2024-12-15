@@ -1,68 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="@color/backgroundColor">
+    android:gravity="center"
+    android:padding="16dp">
 
-    <!-- Заголовок -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Tetris!"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@color/primaryTextColor"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="32dp" />
-
-    <!-- Поле ввода логина -->
-    <EditText
-        android:id="@+id/usernameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your username"
-        android:hintTextColor="@color/hintColor"
-        android:textColor="@color/primaryTextColor"
-        android:background="@drawable/input_background"
-        android:padding="12dp"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Поле ввода пароля -->
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your password"
-        android:inputType="textPassword"
-        android:hintTextColor="@color/hintColor"
-        android:textColor="@color/primaryTextColor"
-        android:background="@drawable/input_background"
-        android:padding="12dp"
-        android:layout_marginBottom="24dp" />
-
-    <!-- Кнопка входа -->
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/btnStartGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textColor="@color/buttonTextColor"
-        android:background="@drawable/button_primary"
-        android:padding="12dp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
+        android:text="Играть в Тетрис" />
 
-    <!-- Кнопка регистрации -->
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:textColor="@color/buttonTextColor"
-        android:background="@drawable/button_secondary"
-        android:padding="12dp"
-        android:textStyle="bold" />
+        android:text="Выйти" />
 </LinearLayout>
