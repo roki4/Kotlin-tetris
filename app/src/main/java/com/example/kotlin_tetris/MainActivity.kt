@@ -15,8 +15,10 @@ class MainActivity : AppCompatActivity() {
         val btnLogout = findViewById<Button>(R.id.btnLogout)
 
         btnStartGame.setOnClickListener {
-            // Переход на экран игры
             startActivity(Intent(this, GameActivity::class.java))
+        }
+        findViewById<Button>(R.id.btnProfile).setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
 
         btnLogout.setOnClickListener {

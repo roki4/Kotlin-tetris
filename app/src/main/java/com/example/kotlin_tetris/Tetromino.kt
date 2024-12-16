@@ -10,18 +10,25 @@ enum class TetrominoType(val color: Int) {
     Z(android.graphics.Color.RED)
 }
 
-class Tetromino(val type: TetrominoType, val shape: Array<IntArray>) {
+class Tetromino(val type: TetrominoType, var shape: Array<IntArray>) {
     var x: Int = 0
     var y: Int = 0
 
     fun rotate() {
-        val size = shape.size
-        val rotatedShape = Array(size) { IntArray(size) }
+        val rows = shape.size
+        val cols = shape[0].size
+        val rotatedShape = Array(cols) { IntArray(rows) }
+
         for (i in shape.indices) {
             for (j in shape[i].indices) {
-                rotatedShape[j][size - 1 - i] = shape[i][j]
+                rotatedShape[j][rows - 1 - i] = shape[i][j]
             }
         }
-        for (i in shape.indices) shape[i] = rotatedShape[i]
+
+        shape = rotatedShape
     }
+
+
+
+
 }
