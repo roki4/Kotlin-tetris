@@ -88,9 +88,9 @@ class GameActivity : AppCompatActivity() {
                         val linesCleared = gameLogic.clearLines()
                         if (linesCleared > 0) {
                             score += linesCleared * 100
-                            if (score >= level * 500) {
+                            if (score >= level * 500) { // Порог повышения уровня
                                 level++
-                                delay = maxOf(100, delay - 50) // Ускорение
+                                delay = maxOf(100, delay - 50) // Ускоряем падение
                             }
                         }
                         tvScore.text = "Очки: $score"

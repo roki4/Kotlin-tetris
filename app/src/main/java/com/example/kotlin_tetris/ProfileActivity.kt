@@ -1,5 +1,6 @@
 package com.example.kotlin_tetris
 
+import com.example.kotlin_tetris.DatabaseHelper
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
@@ -12,17 +13,24 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        // Инициализация com.example.kotlin_tetris.database.DatabaseHelper
         val dbHelper = DatabaseHelper(this)
-        val userId = 1 // Замените на текущий ID пользователя
+
+        // Замените userId на ID текущего пользователя
+        val userId = 1
 
         // Получаем лучший результат и последние 10 игр
         val bestScore = dbHelper.getBestScore(userId)
         val recentScores = dbHelper.getLastScores(userId)
-        val formattedScores = recentScores.map { "Очки: ${it.first}, Уровень: ${it.second}" }
+
+        // Форматируем результаты для отображения
+        val formattedScores: List<String> = recentScores.map { score ->
+            "Очки: ${score.first}, Уровень: ${score.second}"
+        }
 
         // Отображаем лучший результат
         val tvBestScore = findViewById<TextView>(R.id.tvBestScore)
-        tvBestScore.text = "Лучший результат: $bestScore"
+        tvBestScore.text = getString(R.string.best_score, bestScore)
 
         // Отображаем последние 10 игр
         val lvRecentScores = findViewById<ListView>(R.id.lvRecentScores)

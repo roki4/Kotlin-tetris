@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Kotlin-tetris</string>
+    <string name="best_score">Лучший результат: %1$d</string>
+
 </resources>
